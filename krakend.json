@@ -1,0 +1,38 @@
+{
+    "$schema": "https://www.krakend.io/schema/v3.json",
+    "version": 3,
+    "name": "KrakenD - API Gateway",
+    "timeout": "3000ms",
+    "cache_ttl": "300s",
+    "output_encoding": "no-op",
+    "endpoints": [
+      {
+        "endpoint": "/items",
+        "method": "GET",
+        "output_encoding": "no-op",
+        "backend": [
+          {
+            "url_pattern": "/items",
+            "method": "GET",
+            "host": [
+              "https://api.restapi-placeholder.com"
+            ]
+          }
+        ]
+      },
+      {
+        "endpoint": "/items",
+        "method": "POST",
+        "output_encoding": "no-op",
+        "backend": [
+          {
+            "url_pattern": "/items",
+            "method": "POST",
+            "host": [
+              "https://api.restapi-placeholder.com"
+            ]
+          }
+        ]
+      }
+    ]
+}
